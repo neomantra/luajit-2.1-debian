@@ -1,9 +1,9 @@
-Index: luajit-2.0.0~rc1+dfsg/src/luaconf.h
+Index: luajit/src/luaconf.h
 ===================================================================
---- luajit-2.0.0~rc1+dfsg.orig/src/luaconf.h	2012-10-31 18:30:00.000000000 +0100
-+++ luajit-2.0.0~rc1+dfsg/src/luaconf.h	2012-11-02 19:28:22.000000000 +0100
+--- luajit.orig/src/luaconf.h	2013-05-20 19:09:02.132136461 +0200
++++ luajit/src/luaconf.h	2013-05-20 19:09:02.124136461 +0200
 @@ -33,7 +33,10 @@
- #define LUA_JDIR	LUA_XROOT "share/luajit-2.0.0/"
+ #define LUA_JDIR	LUA_XROOT "share/luajit-2.0.1/"
  #define LUA_XPATH \
    ";" LUA_XROOT "share/lua/5.1/?.lua;" LUA_XROOT "share/lua/5.1/?/init.lua"
 -#define LUA_XCPATH	LUA_XROOT "lib/lua/5.1/?.so;"
@@ -12,5 +12,5 @@ Index: luajit-2.0.0~rc1+dfsg/src/luaconf.h
 +#define LUA_XCPATH	LUA_XROOT "lib/" DEB_HOST_MULTIARCH "/lua/5.1/?.so;" \
 +			LUA_XROOT "lib/lua/5.1/?.so;"
  #else
- #define LUA_JDIR	LUA_ROOT "share/luajit-2.0.0/"
+ #define LUA_JDIR	LUA_ROOT "share/luajit-2.0.1/"
  #define LUA_XPATH
