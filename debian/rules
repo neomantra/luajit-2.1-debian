@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 ABIM=2
 ABIN=0
-ABIO=0
+ABIO=1
 ABI=$(ABIM).$(ABIN).$(ABIO)
 
 LUA_MULTIARCH_INCLUDE = debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/
