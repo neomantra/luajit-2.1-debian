@@ -3,7 +3,7 @@ Section: interpreters
 Priority: optional
 Maintainer: Enrico Tassi <gareuselesinge@debian.org>
 Build-Depends: debhelper (>= 7.0.50~), quilt (>= 0.46-7~)
-Standards-Version: 3.9.2
+Standards-Version: 3.9.4
 Vcs-Git: git://git.debian.org/git/pkg-lua/luajit.git
 Vcs-Browser: http://git.debian.org/?p=pkg-lua/luajit.git
 Homepage: http://luajit.org
