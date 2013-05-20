@@ -1,6 +1,7 @@
 luajit (2.0.1+hotfix1+dfsg-1) unstable; urgency=low
 
   * New upsream release
+  * Packaging moved to git
 
  -- Enrico Tassi <gareuselesinge@debian.org>  Mon, 20 May 2013 18:08:12 +0200
 
