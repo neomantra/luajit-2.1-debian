@@ -1,0 +1,23 @@
+The upstream sources contain .css files that do not conform to DFSG, since
+the following banner prevents their reuse.
+
+  /* Copyright (C) 2004-2009 Mike Pall.
+   *
+   * You are welcome to use the general ideas of this design for your own
+   * sites.  But please do not steal the stylesheet, the layout or the
+   * color scheme.
+   */
+
+Moreover the upstream made explicit that .html files (will) be licensed
+under terms not suitable for Debian:
+
+  > If you insist it is unreadable, I can write a simple css to just format
+  > the page, and make it MIT/X.
+  
+  The HTML files contain a copyright, too. And I haven't decided on
+  a license for them, either. I.e. they are unacceptable for Debian.
+  
+  Most users search online for the docs, anyway. And the online URL
+  for the docs is e.g. printed at startup.
+
+The sources has been repackaged removing doc/*.

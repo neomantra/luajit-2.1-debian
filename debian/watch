@@ -1,0 +1,6 @@
+# test this watch file using:
+# uscan --watchfile debian/watch --upstream-version 0.0.1 --package luajit
+#
+version=3
+opts="uversionmangle=s/$/+dfsg/,uversionmangle=s/-beta/~beta/" \
+http://luajit.org/download.html download/LuaJIT-(.*).tar.gz

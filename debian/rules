@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+ABIM=2
+ABIN=0
+ABIO=0
+ABI=$(ABIM).$(ABIN).$(ABIO)
+
+LUA_MULTIARCH_INCLUDE = debian/tmp/usr/include/$(DEB_HOST_MULTIARCH)/
+LUA_MULTIARCH = luajit5.1-deb-multiarch.h
+
+%:
+	dh --with quilt $@
+
+override_dh_auto_configure:
+	echo "#ifndef _LUA_DEB_MULTIARCH_" > src/$(LUA_MULTIARCH)
+	echo "#define _LUA_DEB_MULTIARCH_" >> src/$(LUA_MULTIARCH)
+	echo "#define DEB_HOST_MULTIARCH \"$(DEB_HOST_MULTIARCH)\"" >> \
+					                src/$(LUA_MULTIARCH)
+	echo "#endif" >> src/$(LUA_MULTIARCH)
+
+
+override_dh_auto_build:
+	make amalg PREFIX=/usr CC=gcc DEB_HOST_MULTIARCH=$(DEB_HOST_MULTIARCH)
+
+override_dh_auto_clean:
+	dh_auto_clean
+
+override_dh_auto_install:
+	make install PREFIX=/usr/ DESTDIR=$$PWD/debian/tmp/
+	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
+	mv debian/tmp/usr/lib/lua debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
+	mv debian/tmp/usr/lib/pkgconfig debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
+	mv debian/tmp/usr/lib/lib* debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
+	cd debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH) &&  \
+		ln -fs libluajit-5.1.so.$(ABI) libluajit-5.1.so &&  \
+		ln -fs libluajit-5.1.so.$(ABI) libluajit-5.1.so.$(ABIM)
+	mkdir -p $(LUA_MULTIARCH_INCLUDE)
+	cp src/$(LUA_MULTIARCH) $(LUA_MULTIARCH_INCLUDE)
+
+

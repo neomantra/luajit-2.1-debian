@@ -1,0 +1,4 @@
+usr/lib/*/libluajit-5.1.a
+usr/lib/*/libluajit-5.1.so
+usr/lib/*/pkgconfig/
+usr/include/
