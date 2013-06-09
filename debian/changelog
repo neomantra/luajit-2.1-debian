@@ -1,3 +1,9 @@
+luajit (2.0.2+dfsg-1) unstable; urgency=low
+
+  * New upstream release 
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sun, 09 Jun 2013 16:04:50 +0200
+
 luajit (2.0.1+hotfix1+dfsg-1) unstable; urgency=low
 
   * New upsream release
