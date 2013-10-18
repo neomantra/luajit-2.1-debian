@@ -1,3 +1,9 @@
+luajit (2.1.0-1+a014d5e6) unstable; urgency=low
+
+  * Update to LuaJIT v2.1 alpha changeset a014d5e6
+
+ -- Evan Wies <evan@neomantra.net>  Fri, 18 Oct 2013 00:52:42 -0400
+
 luajit (2.0.2+dfsg-1) unstable; urgency=low
 
   * New upstream release 
