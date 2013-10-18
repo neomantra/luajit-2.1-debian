@@ -1,4 +1,4 @@
-luajit (2.1.0-1+a014d5e6) unstable; urgency=low
+luajit (2.1.0-1+a014d5e6) precise; urgency=low
 
   * Update to LuaJIT v2.1 alpha changeset a014d5e6
 
